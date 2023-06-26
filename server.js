@@ -18,7 +18,7 @@ class App {
     this.app.use('/api', api);
     this.app.use(express.static('public'));
   }
-  
+
   setupRoutes() {
     this.app.get('/notes', (req, res) =>
       res.sendFile(path.join(__dirname, '/public/pages/notes.html'))
@@ -28,4 +28,12 @@ class App {
       res.sendFile(path.join(__dirname, '/public/index.html'))
     );
   }
+  startServer() {
+    this.app.listen(this.PORT, () =>
+      console.log(`App listening at ${this.PORT}`)
+    );
+  }
 }
+
+module.exports = App;
+
