@@ -6,9 +6,17 @@ class App {
   constructor() {
     this.app = express();
     this.PORT = process.env.PORT || 8080;
-  }}
-  // Middleware 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use('/api', api);
-app.use(express.static('public'));
+
+    this.setupMiddleware();
+    this.setupRoutes();
+    this.startServer();
+  }
+
+  setupMiddleware() {
+    this.app.use(express.json());
+    this.app.use(express.urlencoded({ extended: true }));
+    this.app.use('/api', api);
+    this.app.use(express.static('public'));
+  }
+
+}
