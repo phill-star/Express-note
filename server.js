@@ -18,5 +18,14 @@ class App {
     this.app.use('/api', api);
     this.app.use(express.static('public'));
   }
+  
+  setupRoutes() {
+    this.app.get('/notes', (req, res) =>
+      res.sendFile(path.join(__dirname, '/public/pages/notes.html'))
+    );
 
+    this.app.get('/*', (req, res) =>
+      res.sendFile(path.join(__dirname, '/public/index.html'))
+    );
+  }
 }
