@@ -23,3 +23,17 @@ router.get('/', (req, res) => {
       }
     }
   });
+
+  router.post('/', (req, res) => {
+    console.info(`${req.method} request received to add a note.`);
+    const { title, text } = req.body;
+
+    if (req.body) {
+      const newNote = {
+        title,
+        date: getDate(),
+        text,
+        note_id: uuid(),
+      };
+    }
+});  
