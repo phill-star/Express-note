@@ -21,13 +21,14 @@ class App {
 
   setupRoutes() {
     this.app.get('/notes', (req, res) =>
-      res.sendFile(path.join(__dirname, '/public/pages/notes.html'))
+      res.sendFile(path.join(__dirname, '/public/notes.html'))
     );
 
     this.app.get('/*', (req, res) =>
       res.sendFile(path.join(__dirname, '/public/index.html'))
     );
   }
+
   startServer() {
     this.app.listen(this.PORT, () =>
       console.log(`App listening at ${this.PORT}`)
@@ -35,5 +36,4 @@ class App {
   }
 }
 
-module.exports = App;
-
+const app = new App();
