@@ -16,3 +16,18 @@ const readAndAppend = async (content, file) => {
     }
   };
   
+  const readAndOverwrite = async (content, file) => {
+    try {
+      await writeToFile(file, content);
+      console.info(`\nData overwritten in ${file}`);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+  
+  module.exports = {
+    readFromFile,
+    readAndAppend,
+    readAndOverwrite
+  };
+  
