@@ -24,6 +24,9 @@ class App {
       res.sendFile(path.join(__dirname, '/public/notes.html'))
     );
 
+    // Add the following route to handle the /api/notes endpoint
+    this.app.use('/api/notes', api);
+
     this.app.get('/*', (req, res) =>
       res.sendFile(path.join(__dirname, '/public/index.html'))
     );
@@ -35,4 +38,5 @@ class App {
     );
   }
 }
+
 const app = new App();
