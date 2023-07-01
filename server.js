@@ -5,7 +5,7 @@ const api = require('./routes/index.js');
 class App {
   constructor() {
     this.app = express();
-    this.PORT = process.env.PORT || 8080;
+    this.PORT = process.env.PORT || 6060;
 
     this.setupMiddleware();
     this.setupRoutes();
