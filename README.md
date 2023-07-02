@@ -1,6 +1,6 @@
 # express-note
 
-This project was intended to demonstrate how to save files using promise to the server. 
+This project was intended to demonstrate how to save files to the server. 
 
 This app is created to help the user organize their day or future plans.
 
